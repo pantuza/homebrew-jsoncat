@@ -5,7 +5,7 @@
 class Jsoncat < Formula
   desc ""
   homepage "https://github.com/pantuza/jsoncat"
-  url "https://github.com/pantuza/jsoncat/blob/master/build/home:pantuza/jsoncat/jsoncat-0.1.0.tar.gz"
+  url "https://github.com/pantuza/jsoncat/raw/master/build/home:pantuza/jsoncat/jsoncat-0.1.0.tar.gz"
   version "0.1.0"
   sha256 "42f27901be0c67b17b45d1ec55a5a61c100a11ad07b9b5f28ee1886835f99bb6"
 
