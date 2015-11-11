@@ -13,7 +13,7 @@ class Jsoncat < Formula
 
   def install
     system "make"
-    system "make", "install" # if this fails, try separate make/make install steps
+    bin.install "bin/jsoncat"
     
   end
 
