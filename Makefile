@@ -25,7 +25,7 @@ help:
 update:
 	@if [ "$(CURR_SHA256)" != "$(SHA256)" ]; then \
 		echo "Updating formula SHA256 from $(CURR_SHA256) to $(SHA256)"; \
-		sed -i 's/$(CURR_SHA256)/$(SHA256)/' $(FORMULA_DIR)/$(JSONCAT_FORMULA) \
+		sed -i '' 's/$(CURR_SHA256)/"$(SHA256)"/' $(FORMULA_DIR)/$(JSONCAT_FORMULA); \
 	else \
 		echo "No changes at Tarball. Nothing to update. Aborting.."; \
 	fi;
