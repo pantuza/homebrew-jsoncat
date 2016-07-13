@@ -1,5 +1,5 @@
 #
-# Makefile to handle Jsoncat build process to Mac OS X 
+# Makefile to handle Jsoncat build process to Mac OS X
 #
 
 FORMULA_DIR := Formula
@@ -8,7 +8,7 @@ JSONCAT_FORMULA := jsoncat.rb
 
 LIMBO := /dev/null
 
-
+GIT := $(shell which git)
 GREP := $(shell which grep)
 AWK := $(shell which awk)
 
@@ -20,12 +20,16 @@ CURR_SHA256 := $(shell $(GREP) 'sha256' $(FORMULA_DIR)/$(JSONCAT_FORMULA) | $(AW
 
 help:
 	@echo "Json cat build process"
+	@echo "Run 'make update' to verify if there is a new version of Jsoncat."
+	@echo "If yes, it will update Formula file"
 
 
 update:
 	@if [ "$(CURR_SHA256)" != "$(SHA256)" ]; then \
 		echo "Updating formula SHA256 from $(CURR_SHA256) to $(SHA256)"; \
 		sed -i '' 's/$(CURR_SHA256)/"$(SHA256)"/' $(FORMULA_DIR)/$(JSONCAT_FORMULA); \
+		echo "Formula file diff:"; \
+		$(GIT) diff $(FORMULA_DIR)/$(JSONCAT_FORMULA); \
 	else \
 		echo "No changes at Tarball. Nothing to update. Aborting.."; \
 	fi;
