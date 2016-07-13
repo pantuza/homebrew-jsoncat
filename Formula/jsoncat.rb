@@ -7,7 +7,7 @@ class Jsoncat < Formula
   homepage "https://github.com/pantuza/jsoncat"
   url "https://github.com/pantuza/jsoncat/raw/master/build/home:pantuza/jsoncat/jsoncat-0.1.1.tar.gz"
   version "0.1.1"
-  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  sha256 "c8b5aab31e807e15f0d23b52b2e5eb3d20cad2bd35d8ab05074247ebe7b7ea4d"
 
   depends_on "cmake" => :build
 
