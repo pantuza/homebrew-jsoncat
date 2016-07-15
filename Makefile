@@ -33,3 +33,6 @@ update:
 	else \
 		echo "No changes at Tarball. Nothing to update. Aborting.."; \
 	fi;
+
+audit:
+	brew audit --strict --online jsoncat
