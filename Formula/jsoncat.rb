@@ -14,6 +14,6 @@ class Jsoncat < Formula
   end
 
   test do
-    system "echo \"{'test': true}\" | jsoncat"
+    `echo "{'test': true}" | jsoncat]`
   end
 end
