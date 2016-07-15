@@ -19,6 +19,6 @@ class Jsoncat < Formula
   end
 
   test do
-    system "make test"
+    system "echo \"{'test': true}\" | jsoncat"
   end
 end
