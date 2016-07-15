@@ -14,6 +14,7 @@ class Jsoncat < Formula
   def install
     system "make"
     bin.install "bin/jsoncat"
+    man1.install "docs/jsoncat.1"
 
   end
 
