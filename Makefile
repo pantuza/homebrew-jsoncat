@@ -18,6 +18,10 @@ SHA256 := $(shell wget -q -O- $(TARBALL_URL) | shasum --algorithm 256 | cut -d "
 
 CURR_SHA256 := $(shell $(GREP) 'sha256' $(FORMULA_DIR)/$(JSONCAT_FORMULA) | $(AWK) '{print $$2}')
 
+SED := $(shell which sed)
+ifeq ($(shell uname),Darwin)
+	SED := $(shell which gsed)
+endif
 
 help:
 	@echo "Json cat build process"
