@@ -35,9 +35,9 @@ help:
 
 # Checks if there is a new tarball and update formula hash
 update:
-	@if [ "$(CURR_SHA256)" != "$(SHA256)" ]; then \
+	@if [ $(CURR_SHA256) != "$(SHA256)" ]; then \
 		echo "Updating formula SHA256 from $(CURR_SHA256) to $(SHA256)"; \
-		sed -i 's/$(CURR_SHA256)/"$(SHA256)"/' $(FORMULA_DIR)/$(JSONCAT_FORMULA); \
+		$(SED) -i 's/$(CURR_SHA256)/"$(SHA256)"/' $(FORMULA_DIR)/$(JSONCAT_FORMULA); \
 		echo "Formula file diff:"; \
 		$(GIT) diff $(FORMULA_DIR)/$(JSONCAT_FORMULA); \
 	else \
