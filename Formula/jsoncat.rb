@@ -8,8 +8,12 @@ class Jsoncat < Formula
   depends_on "cmake" => :build
 
   def install
+    # Builds binary and install it
     system "make"
     bin.install "bin/jsoncat"
+
+    # Builds man pages and install it
+    system "make manpage -C build"
     man1.install "docs/jsoncat.1"
   end
 
